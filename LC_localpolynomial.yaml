@@ -1,0 +1,112 @@
+inputs:
+  LCdata_TESS_sector40:
+    file: TESS_sector40.dat
+    kind: Phot
+    models:
+      - lc_model_TESS
+      - jitter_TESS
+      - dilution_factor_TESS
+      - local_polynomial_trend_TESS
+  LCdata_TESS_sector41:
+    file: TESS_sector41.dat
+    kind: Phot
+    models:
+      - lc_model_TESS
+      - jitter_TESS
+      - dilution_factor_TESS
+      - local_polynomial_trend_TESS
+  LCdata_AsiagoTelescope:
+    file: valerio/TOI5398.01_LC_Asiago.dat
+    kind: Phot
+    models:
+      - lc_model_Asiago
+      - jitter_Asiago
+      - local_polynomial_trend_Asiago
+common:
+  planets:
+    b:
+      orbit: circular
+      parametrization: Eastman2013_Tcent
+      boundaries:
+        Tc: [57616.3, 57616.7]
+        P:  [10.57, 10.61]
+      spaces:
+        P: Linear
+  star:
+    star_parameters:
+      priors:
+        radius: ['Gaussian', 1.05, 0.04]
+        mass: ['Gaussian', 1.113, 0.143]
+        density: ['Gaussian', 0.96, 0.165]
+      boundaries:
+        density: [0.5, 1.5]
+    limb_darkening_TESS:
+      type: ld_quadratic
+      parametrization: Kipping
+      #priors:
+       # ld_c1: ['Gaussian',0.17, 0.13]
+       # ld_c2: ['Gaussian',0.31, 0.23]
+    limb_darkening_Asiago:
+      type: ld_quadratic
+      parametrization: Kipping
+      priors:
+        ld_c1: ['Gaussian',0.49, 0.05]
+        ld_c2: ['Gaussian',0.15, 0.05]
+models:
+  jitter_Asiago:
+    type: common_jitter
+  jitter_TESS:
+    type: common_jitter
+  dilution_factor_TESS:
+      kind: dilution_factor
+      priors:
+        d_factor: ['Gaussian', 0.00735, 0.00005]
+  local_polynomial_trend_TESS:
+    type: local_polynomial_trend
+    normalization_model: True
+    order: 2
+    boundaries:
+      poly_c0: [0.5, 1.5]
+      poly_c1: [-0,1, 0.1]
+      poly_c2: [-0.1, 0.1]
+  local_polynomial_trend_Asiago:
+    type: local_polynomial_trend
+    normalization_model: True
+    order: 1
+    boundaries:
+      poly_c0: [0.5, 1.5]
+      poly_c1: [-0.1, 0.1]
+  lc_model_Asiago:
+    kind: batman_transit
+    planets:
+      - b
+    limb_darkening: limb_darkening_Asiago
+    supersample_factor: 1
+    exposure_time: 5.00
+  lc_model_TESS:
+    kind: batman_transit
+    planets:
+      - b
+    limb_darkening: limb_darkening_TESS
+    supersample_factor: 1
+    exposure_time: 120.00
+parameters:
+  Tref: 57600
+  use_tex: False
+solver:
+  pyde:
+    ngen: 100000
+    npop_mult: 4
+    #use_threading_pool: False
+  emcee:
+    npop_mult: 4
+    nsteps: 100000
+    nburn: 25000
+    nsave: 2500
+    thin: 200
+    #use_threading_pool: False
+  nested_sampling:
+    nlive: 1000
+    num_repeats_mult: 5
+    sampling_efficiency: 0.30
+  recenter_bounds: True
