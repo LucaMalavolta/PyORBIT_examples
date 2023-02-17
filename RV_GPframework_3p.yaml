@@ -1,0 +1,110 @@
+inputs:
+  RVdata:
+    file: RVS_PyORBIT.dat
+    kind: RV
+    models:
+      - radial_velocities
+      - gp_multidimensional
+    boundaries:
+      offset: [12580.0, 12630.0] #example for a RV interval
+      jitter: [0.0, 10.0]
+  BISdata:
+    file: BIS_PyORBIT.dat
+    kind: BIS
+    models:
+      - gp_multidimensional
+    boundaries:
+      offset: [20.0, 70.0]
+      jitter: [0.0, 10.0]
+  FWHMdata:
+    file: FWHM_PyORBIT.dat
+    kind: FWHM
+    models:
+      - gp_multidimensional
+    boundaries:
+      offset: [5660.0, 5820.0]
+      jitter: [0.00, 50.0]
+common:
+  planets:
+    b:
+      orbit: circular
+      parametrization: Eastman2013_Tcent
+      boundaries:
+        P: [0.21000, 0.240000]
+        K: [0.001, 20.0]
+        Tc: [59144.60, 59144.63]
+      priors:
+        P: ['Gaussian', 0.2241951, 0.00000030]
+        Tc: ['Gaussian', 59144.616171, 0.000284]
+    c:
+      orbit: keplerian
+      boundaries:
+        P: [2.0, 100.0]
+        K: [0.001, 30.0]
+        e: [0.00, 0.70]
+      priors:
+        e: ['Gaussian', 0.00, 0.098]
+    d:
+      orbit: keplerian
+      boundaries:
+        P: [2.0, 100.0]
+        K: [0.001, 30.0]
+        e: [0.00, 0.70]
+      priors:
+        e: ['Gaussian', 0.00, 0.098]
+  activity:
+    boundaries:
+      Prot: [20.0, 30.0]
+      Pdec: [30.0, 1000.0]
+      Oamp: [0.01, 1.0]
+    priors:
+      Prot: ['Gaussian', 14.00, 0.50]
+      Oamp: ['Gaussian', 0.35, 0.035]
+  star:
+    star_parameters:
+      priors:
+        mass: ['Gaussian', 0.65, 0.05]
+        radius: ['Gaussian', 0.624, 0.005]
+        density: ['Gaussian', 2.65, 0.08]
+models:
+  radial_velocities:
+    planets:
+      - b
+      - c
+      - d
+  gp_multidimensional:
+    model: gp_multidimensional_quasiperiodic
+    common: activity
+    hyperparameters_condition: True
+    rotation_decay_condition: True
+    RVdata:
+      boundaries:
+        rot_amp: [0.0, 20.0] #at least one must be positive definite
+        con_amp: [-20.0, 20.0]
+      derivative: True
+    BISdata:
+      boundaries:
+        rot_amp: [-20.0, 20.0]
+        con_amp: [-20.0, 20.0]
+      derivative: True
+    FWHMdata:
+      boundaries:
+        con_amp: [-50., 50.]
+      derivative: False
+parameters:
+  Tref: 59200.00
+solver:
+  pyde:
+    ngen: 50000
+    npop_mult: 4
+  emcee:
+    npop_mult: 4
+    nsteps: 100000
+    nburn: 25000
+    nsave: 25000
+    thin: 100
+    #use_threading_pool: False
+  nested_sampling:
+    nlive: 1000
+    sampling_efficiency: 0.30
+  recenter_bounds: True

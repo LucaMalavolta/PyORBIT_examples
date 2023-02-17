@@ -1,0 +1,63 @@
+inputs:
+  LCdata_fullLC:
+    file: LC_rescaled.dat #original flux devided by its median
+    kind: Phot
+    models:
+      - lc_model
+      - normalization_factor
+      - celerite2_rotation
+common:
+  planets:
+    b:
+      orbit: circular
+      parametrization: Eastman2013_Tcent
+      boundaries:
+        P: [0.21000, 0.240000]
+        #e: [0.00, 0.95]
+        Tc: [59144.60, 59144.63]
+      spaces:
+        P: Linear
+  activity:
+    boundaries:
+      Prot: [10., 50.]
+  star:
+    star_parameters:
+      priors:
+        mass: ['Gaussian', 0.65, 0.05]
+        radius: ['Gaussian', 0.624, 0.005]
+        density: ['Gaussian', 2.65, 0.08]
+    limb_darkening:
+      type: ld_quadratic
+      parametrization: Kipping
+      priors:
+        ld_c1: ['Gaussian', 0.4965, 0.06]
+        ld_c2: ['Gaussian', 0.1259, 0.14]
+models:
+  lc_model:
+    kind: batman_transit
+    planets: b
+    supersample_factor: 1
+    exposure_time: 120.00
+  normalization_factor:
+    kind: normalization_factor
+  celerite2_rotation:
+    common: activity
+    LCdata_fullLC:
+      boundaries:
+        rot_amp: [0.000001, 0.10]
+parameters:
+  Tref: 59200.00
+solver:
+  pyde:
+    ngen: 50000
+    npop_mult: 4
+  emcee:
+    npop_mult: 4
+    nsteps: 100000
+    nburn: 25000
+    nsave: 25000
+    thin: 100
+  nested_sampling:
+    nlive: 1000
+    sampling_efficiency: 0.30
+  recenter_bounds: True
