@@ -20,7 +20,7 @@ models:
     planets:
       - b
 parameters:
-  Tref: 2459500.00
+  Tref: 2453600.00
 solver:
   pyde:
     ngen: 50000
