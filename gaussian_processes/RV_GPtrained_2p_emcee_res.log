@@ -1,0 +1,687 @@
+**** USING NUMBA ****
+
+PyORBIT v10.0.0beta
+
+Python version in use:
+3.9.7 (default, Sep 16 2021, 13:09:58) 
+[GCC 7.5.0]
+ LaTeX disabled by default
+Using orbital model:  circular
+Using orbital parametrization:  Eastman2013_Tcent
+Time of transit replacing mean longitude as a free parameter:  True
+
+Using orbital model:  keplerian
+Using orbital parametrization:  Eastman2013_Tcent
+Time of transit replacing mean longitude as a free parameter:  True
+
+
+emcee version:  3.1.3
+
+ Reference Time Tref: 59200.0
+
+ Dimensions = 26
+ Nwalkers = 104
+
+ Steps: 50000
+
+
+ LN posterior:  -428.757546      -4.441789     3.673961 (15-84 p) 
+
+ Median log_priors     = -83.79572819466485
+ Median log_likelihood = -333.66697514962016
+
+ Median BIC  (using likelihood) = 808.1525607565552
+ Median AIC  (using likelihood) = 719.3339502992403
+ Median AICc (using likelihood) = 726.4248593901494
+
+ Median BIC  (using posterior)  = 975.7440171458849
+ Median AIC  (using posterior)  = 886.92540668857
+ Median AICc (using posterior)  = 894.0163157794791
+
+ MAP log_priors     = -85.05309437969017
+ MAP log_likelihood = -332.77997042647576
+
+ MAP BIC  (using likelihood) = 806.3785513102664
+ MAP AIC  (using likelihood) = 717.5599408529515
+ MAP AICc (using likelihood) = 724.6508499438606
+
+ MAP BIC  (using posterior)  = 976.4847400696467
+ MAP AIC  (using posterior)  = 887.6661296123318
+ MAP AICc (using posterior)  = 894.7570387032409
+
+ AICc suggested over AIC because NDATA ( 225 ) < 40 * NDIM ( 26 )
+
+****************************************************************************************************
+
+
+Computing the autocorrelation time of the chains
+
+***** WARNING ******
+The integrated autocorrelation time cannot be reliably estimated
+likely the chains are too short, and ACF analysis is not fully reliable
+emcee.autocorr.integrated_time tolerance lowered to 20
+If you still get a warning, you should drop these results entirely
+
+Reference thinning used in the analysis: 100
+Step length used in the analysis: 11*nthin = 1100
+
+Convergence criteria: less than 1% variation in ACF after 20 times the integrated ACF
+At least 50*ACF after convergence, 100*ACF would be ideal
+Negative values: not converged yet
+
+   sampler parameter              |    ACF   | ACF*nthin | converged at | nsteps/ACF | to 100*ACF
+                                  |          |           |              |            | 
+   RVdata_jitter_1                |    7.70  |      770  |    38500     |      15    |   65514 
+   RVdata_jitter_0                |    7.78  |      778  |    35200     |      19    |   63030 
+   RVdata_offset_0                |    8.10  |      810  |    25300     |      31    |   56272 
+   RVdata_offset_1                |    8.07  |      807  |    27500     |      28    |   58168 
+   RVdata_gp_quasiperiodic_Hamp   |   10.32  |     1032  |    38500     |      11    |   91706 
+   BISdata_jitter_1               |    7.39  |      739  |    29700     |      27    |   53630 
+   BISdata_jitter_0               |    8.18  |      818  |    33000     |      21    |   64776 
+   BISdata_offset_0               |    8.39  |      839  |    30800     |      23    |   64725 
+   BISdata_offset_1               |    8.21  |      821  |    33000     |      21    |   65074 
+   BISdata_gp_quasiperiodic_Hamp  |    9.06  |      906  |    34100     |      18    |   74726 
+   Sdata_jitter_1                 |    7.77  |      777  |    28600     |      28    |   56258 
+   Sdata_jitter_0                 |    7.96  |      796  |    28600     |      27    |   58212 
+   Sdata_offset_0                 |    8.58  |      858  |    40700     |      11    |   76490 
+   Sdata_offset_1                 |    8.09  |      809  |    33000     |      21    |   63945 
+   Sdata_gp_quasiperiodic_Hamp    |    9.17  |      917  |    39600     |      11    |   81325 
+   b_K                            |    7.61  |      761  |    31900     |      24    |   57974 
+   b_P                            |    7.49  |      749  |    39600     |      14    |   64467 
+   b_Tc                           |    7.54  |      754  |    29700     |      27    |   55140 
+   c_sre_coso                     |    8.74  |      874  |    35200     |      17    |   72564 
+   c_sre_sino                     |    7.63  |      763  |    25300     |      32    |   51643 
+   c_K                            |    8.79  |      879  |    35200     |      17    |   73145 
+   c_P                            |    7.83  |      783  |    31900     |      23    |   60217 
+   c_Tc                           |    7.30  |      730  |    23100     |      37    |   46087 
+   activity_Prot                  |    8.00  |      800  |    30800     |      24    |   60783 
+   activity_Pdec                  |   11.04  |     1104  |    29700     |      18    |   90070 
+   activity_Oamp                  |    9.15  |      915  |    29700     |      22    |   71223 
+
+All the chains have converged, but PyORBIT should keep running for about:
+23757 more steps to reach 50*ACF,
+65276 more steps to reach 100*ACF
+Suggested value for burnin: 32238
+
+ Plotting the ACF... 
+
+
+====================================================================================================
+     Ids, spaces (s), boundaries (b) and priors (p) of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1      id:  11  s:Linear      b:[      0.0120,    1088.3783]   p:Uniform   []
+jitter_0      id:  12  s:Linear      b:[      0.0120,    1088.3783]   p:Uniform   []
+offset_0      id:  13  s:Linear      b:[ -13430.6237,    6632.5000]   p:Uniform   []
+offset_1      id:  14  s:Linear      b:[ -13430.6237,    6632.5000]   p:Uniform   []
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp          id:  15  s:Linear      b:[      0.0000,     100.0000]   p:Uniform   []
+
+----- dataset:  BISdata
+jitter_1      id:  16  s:Linear      b:[      0.0240,    2176.7566]   p:Uniform   []
+jitter_0      id:  17  s:Linear      b:[      0.0240,    2176.7566]   p:Uniform   []
+offset_0      id:  18  s:Linear      b:[  -9995.0909,   10059.6000]   p:Uniform   []
+offset_1      id:  19  s:Linear      b:[  -9995.0909,   10059.6000]   p:Uniform   []
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp          id:  20  s:Linear      b:[      0.0000,     100.0000]   p:Uniform   []
+
+----- dataset:  Sdata
+jitter_1      id:  21  s:Linear      b:[      0.0000,       2.7200]   p:Uniform   []
+jitter_0      id:  22  s:Linear      b:[      0.0000,       2.7200]   p:Uniform   []
+offset_0      id:  23  s:Linear      b:[  -9999.3978,   10001.2170]   p:Uniform   []
+offset_1      id:  24  s:Linear      b:[  -9999.3978,   10001.2170]   p:Uniform   []
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp          id:  25  s:Linear      b:[      0.0000,     100.0000]   p:Uniform   []
+
+----- common model:  b
+K             id:   0  s:Linear      b:[      0.0010,      20.0000]   p:Uniform   []
+P             id:   1  s:Linear      b:[      0.2750,       0.2850]   p:Gaussian   [2.80324956e-01 6.70000000e-08]
+Tc            id:   2  s:Linear      b:[  57744.0000,   57744.1000]   p:Gaussian   [5.77440715e+04 1.03000000e-04]
+omega         derived (no id, space, bound)                           p:None   []
+e             derived (no id, space, bound)                           p:None   []
+
+----- common model:  c
+sre_coso      id:   3  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+sre_sino      id:   4  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+K             id:   5  s:Linear      b:[      0.0010,      20.0000]   p:Uniform   []
+P             id:   6  s:Linear      b:[      7.7000,       7.8000]   p:Gaussian   [7.7489943e+00 1.4900000e-05]
+Tc            id:   7  s:Linear      b:[  58371.0000,   58371.1000]   p:Gaussian   [5.83710742e+04 6.52000000e-04]
+e             derived (no id, space, bound)                           p:Gaussian   [0.    0.098]
+omega         derived (no id, space, bound)                           p:Uniform   [0.0, 360.0]
+
+----- common model:  activity
+Prot          id:   8  s:Linear      b:[     10.0000,      20.0000]   p:Uniform   []
+Pdec          id:   9  s:Linear      b:[     20.0000,    1000.0000]   p:Uniform   []
+Oamp          id:  10  s:Log_Base2   b:[     -9.9658,       0.0000]   p:Uniform   []
+
+----- common model:  star_parameters
+mass          derived (no id, space, bound)                           p:Gaussian   [0.708 0.028]
+radius        derived (no id, space, bound)                           p:Gaussian   [0.681 0.018]
+density       derived (no id, space, bound)                           p:Gaussian   [2.65 0.08]
+
+
+****************************************************************************************************
+****************************************************************************************************
+
+ Confidence intervals (median value, 34.135th percentile from the median on the left and right side)
+
+====================================================================================================
+     Statistics on the posterior of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1        11          1.19        -0.70         0.72   (15-84 p)   [    0.0120,  1088.3783]
+jitter_0        12          0.77        -0.52         0.67   (15-84 p)   [    0.0120,  1088.3783]
+offset_0        13       -3409.7         -6.8          6.6   (15-84 p)   [-13430.6237,  6632.5000]
+offset_1        14       -3381.9         -7.1          6.7   (15-84 p)   [-13430.6237,  6632.5000]
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp            15          16.5         -3.5          5.3   (15-84 p)   [    0.0000,   100.0000]
+
+----- dataset:  BISdata
+jitter_1        16           2.3         -1.3          1.3   (15-84 p)   [    0.0240,  2176.7566]
+jitter_0        17          1.00        -0.69          1.0   (15-84 p)   [    0.0240,  2176.7566]
+offset_0        18          21.3         -4.2          4.0   (15-84 p)   [-9995.0909, 10059.6000]
+offset_1        19          46.8         -4.5          4.4   (15-84 p)   [-9995.0909, 10059.6000]
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp            20           9.1         -2.2          3.1   (15-84 p)   [    0.0000,   100.0000]
+
+----- dataset:  Sdata
+jitter_1        21        0.0518      -0.0083        0.010   (15-84 p)   [    0.0000,     2.7200]
+jitter_0        22        0.0371      -0.0049       0.0057   (15-84 p)   [    0.0000,     2.7200]
+offset_0        23         0.867       -0.021        0.021   (15-84 p)   [-9999.3978, 10001.2170]
+offset_1        24         0.905       -0.026        0.025   (15-84 p)   [-9999.3978, 10001.2170]
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp            25         0.045       -0.011        0.015   (15-84 p)   [    0.0000,   100.0000]
+
+----- common model:  b
+K                0          6.28        -0.42         0.42   (15-84 p)   [    0.0010,    20.0000]
+P                1   0.280324957 -0.000000068  0.000000065   (15-84 p)   [    0.2750,     0.2850]
+Tc               2   57744.07151     -0.00010      0.00010   (15-84 p)   [57744.0000, 57744.1000]
+
+----- common model:  c
+sre_coso         3         -0.03        -0.23         0.23   (15-84 p)   [   -1.0000,     1.0000]
+sre_sino         4          0.03        -0.21         0.21   (15-84 p)   [   -1.0000,     1.0000]
+K                5           1.9         -1.4          2.3   (15-84 p)   [    0.0010,    20.0000]
+P                6      7.748994    -0.000015     0.000015   (15-84 p)   [    7.7000,     7.8000]
+Tc               7   58371.07415     -0.00065      0.00066   (15-84 p)   [58371.0000, 58371.1000]
+
+----- common model:  activity
+Prot             8         14.61        -0.24         0.25   (15-84 p)   [   10.0000,    20.0000]
+Pdec             9          34.7         -4.1          8.6   (15-84 p)   [   20.0000,  1000.0000]
+Oamp            10         -1.27        -0.26         0.26   (15-84 p)   [   -9.9658,     0.0000]
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Statistics on the model parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1                  1.19        -0.70         0.72    (15-84 p)
+jitter_0                  0.77        -0.52         0.67    (15-84 p)
+offset_0               -3409.7         -6.8          6.6    (15-84 p)
+offset_1               -3381.9         -7.1          6.7    (15-84 p)
+
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp                      16.5         -3.5          5.3    (15-84 p)
+
+----- dataset:  BISdata
+jitter_1                   2.3         -1.3          1.3    (15-84 p)
+jitter_0                  1.00        -0.69          1.0    (15-84 p)
+offset_0                  21.3         -4.2          4.0    (15-84 p)
+offset_1                  46.8         -4.5          4.4    (15-84 p)
+
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp                       9.1         -2.2          3.1    (15-84 p)
+
+----- dataset:  Sdata
+jitter_1                0.0518      -0.0083        0.010    (15-84 p)
+jitter_0                0.0371      -0.0049       0.0057    (15-84 p)
+offset_0                 0.867       -0.021        0.021    (15-84 p)
+offset_1                 0.905       -0.026        0.025    (15-84 p)
+
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp                     0.045       -0.011        0.015    (15-84 p)
+
+----- common model:  b
+omega                90.000000                              [fixed]
+K                         6.28        -0.42         0.42    (15-84 p)
+P                  0.280324957 -0.000000068  0.000000065    (15-84 p)
+e                         0.00                              [fixed]
+Tc                 57744.07151     -0.00010      0.00010    (15-84 p)
+
+----- common model:  c
+e                        0.071       -0.050        0.077    (15-84 p)
+omega                        2         -149          120    (15-84 p)
+K                          1.9         -1.4          2.3    (15-84 p)
+P                     7.748994    -0.000015     0.000015    (15-84 p)
+Tc                 58371.07415     -0.00065      0.00066    (15-84 p)
+
+----- common model:  activity
+Prot                     14.61        -0.24         0.25    (15-84 p)
+Pdec                      34.7         -4.1          8.6    (15-84 p)
+Oamp                     0.414       -0.069        0.083    (15-84 p)
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+Inclination fixed to 90 deg!
+Computing planetary mass under the approximation M_planet << M_star (threshold at 30.0 Me)
+a_Rs                     2.357       -0.068        0.071    (15-84 p)
+M_Mj                    0.0160      -0.0011       0.0011    (15-84 p)
+M_Me                      5.10        -0.36         0.37    (15-84 p)
+mean_long               348.11        -0.46         0.47    (15-84 p)
+a_AU_(M)              0.007472     -0.00010     0.000096    (15-84 p)
+a_AU_(rho,R)          0.007472     -0.00010     0.000096    (15-84 p)
+
+----- common model:  c
+Inclination fixed to 90 deg!
+Computing planetary mass under the approximation M_planet << M_star (threshold at 30.0 Me)
+a_Rs                     21.56        -0.63         0.65    (15-84 p)
+M_Mj                     0.015       -0.011        0.018    (15-84 p)
+M_Me                       4.7         -3.3          5.7    (15-84 p)
+mean_long                 80.5         -6.4          9.1    (15-84 p)
+a_AU_(M)               0.06830     -0.00091      0.00089    (15-84 p)
+a_AU_(rho,R)           0.06830     -0.00091      0.00089    (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+****************************************************************************************************
+
+ Parameters corresponding to the Maximum a Posteriori probability ( -417.8330648061659 )
+
+====================================================================================================
+     Statistics on the posterior of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1        11      1.152786 [    0.0120,  1088.3783]
+jitter_0        12      0.245305 [    0.0120,  1088.3783]
+offset_0        13  -3409.863831 [-13430.6237,  6632.5000]
+offset_1        14  -3382.111981 [-13430.6237,  6632.5000]
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp            15     13.655731 [    0.0000,   100.0000]
+
+----- dataset:  BISdata
+jitter_1        16      2.710788 [    0.0240,  2176.7566]
+jitter_0        17      0.606860 [    0.0240,  2176.7566]
+offset_0        18     21.024009 [-9995.0909, 10059.6000]
+offset_1        19     46.346062 [-9995.0909, 10059.6000]
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp            20      9.061603 [    0.0000,   100.0000]
+
+----- dataset:  Sdata
+jitter_1        21      0.051999 [    0.0000,     2.7200]
+jitter_0        22      0.034161 [    0.0000,     2.7200]
+offset_0        23      0.867075 [-9999.3978, 10001.2170]
+offset_1        24      0.913000 [-9999.3978, 10001.2170]
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp            25      0.033560 [    0.0000,   100.0000]
+
+----- common model:  b
+K                0      6.162069 [    0.0010,    20.0000]
+P                1      0.280325 [    0.2750,     0.2850]
+Tc               2  57744.071541 [57744.0000, 57744.1000]
+
+----- common model:  c
+sre_coso         3      0.114441 [   -1.0000,     1.0000]
+sre_sino         4     -0.028073 [   -1.0000,     1.0000]
+K                5      0.091535 [    0.0010,    20.0000]
+P                6      7.748979 [    7.7000,     7.8000]
+Tc               7  58371.074455 [58371.0000, 58371.1000]
+
+----- common model:  activity
+Prot             8     14.644367 [   10.0000,    20.0000]
+Pdec             9     34.760404 [   20.0000,  1000.0000]
+Oamp            10     -1.411206 [   -9.9658,     0.0000]
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Statistics on the model parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1              1.152786 
+jitter_0              0.245305 
+offset_0          -3409.863831 
+offset_1          -3382.111981 
+
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp                 13.655731 
+
+----- dataset:  BISdata
+jitter_1              2.710788 
+jitter_0              0.606860 
+offset_0             21.024009 
+offset_1             46.346062 
+
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp                  9.061603 
+
+----- dataset:  Sdata
+jitter_1              0.051999 
+jitter_0              0.034161 
+offset_0              0.867075 
+offset_1              0.913000 
+
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp                  0.033560 
+
+----- common model:  b
+omega                90.000000 
+K                     6.162069 
+P                     0.280325 
+e                         0.00 
+Tc                57744.071541 
+
+----- common model:  c
+e                     0.013885 
+omega               -13.782592 
+K                     0.091535 
+P                     7.748979 
+Tc                58371.074455 
+
+----- common model:  activity
+Prot                 14.644367 
+Pdec                 34.760404 
+Oamp                  0.375997 
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+Inclination fixed to 90 deg!
+a_Rs                  2.380113 
+M_Mj                  0.015568 
+M_Me                  4.948900 
+mean_long           348.544883 
+a_AU_(M)              0.007426 
+a_AU_(rho,R)          0.007426 
+
+----- common model:  c
+Inclination fixed to 90 deg!
+a_Rs                 21.241840 
+M_Mj                  0.000694 
+M_Me                  0.220598 
+mean_long            78.454120 
+a_AU_(M)              0.067633 
+a_AU_(rho,R)          0.067633 
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+****************************************************************************************************
+
+ Parameters corresponding to the sample closest to the median values ( -418.20501654839296 )
+
+====================================================================================================
+     Statistics on the posterior of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1        11      1.090114 [    0.0120,  1088.3783]
+jitter_0        12      1.012684 [    0.0120,  1088.3783]
+offset_0        13  -3409.660072 [-13430.6237,  6632.5000]
+offset_1        14  -3381.847299 [-13430.6237,  6632.5000]
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp            15     10.215514 [    0.0000,   100.0000]
+
+----- dataset:  BISdata
+jitter_1        16      1.748304 [    0.0240,  2176.7566]
+jitter_0        17      0.803698 [    0.0240,  2176.7566]
+offset_0        18     23.958569 [-9995.0909, 10059.6000]
+offset_1        19     48.062681 [-9995.0909, 10059.6000]
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp            20      8.311384 [    0.0000,   100.0000]
+
+----- dataset:  Sdata
+jitter_1        21      0.052312 [    0.0000,     2.7200]
+jitter_0        22      0.034655 [    0.0000,     2.7200]
+offset_0        23      0.860654 [-9999.3978, 10001.2170]
+offset_1        24      0.895975 [-9999.3978, 10001.2170]
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp            25      0.033410 [    0.0000,   100.0000]
+
+----- common model:  b
+K                0      6.280344 [    0.0010,    20.0000]
+P                1      0.280325 [    0.2750,     0.2850]
+Tc               2  57744.071580 [57744.0000, 57744.1000]
+
+----- common model:  c
+sre_coso         3     -0.014557 [   -1.0000,     1.0000]
+sre_sino         4     -0.010730 [   -1.0000,     1.0000]
+K                5      1.580444 [    0.0010,    20.0000]
+P                6      7.748995 [    7.7000,     7.8000]
+Tc               7  58371.074641 [58371.0000, 58371.1000]
+
+----- common model:  activity
+Prot             8     14.567544 [   10.0000,    20.0000]
+Pdec             9     29.481479 [   20.0000,  1000.0000]
+Oamp            10     -1.415874 [   -9.9658,     0.0000]
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Statistics on the model parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1              1.090114 
+jitter_0              1.012684 
+offset_0          -3409.660072 
+offset_1          -3381.847299 
+
+
+----- dataset: RVdata                    ----- model: gp_quasiperiodic              
+Hamp                 10.215514 
+
+----- dataset:  BISdata
+jitter_1              1.748304 
+jitter_0              0.803698 
+offset_0             23.958569 
+offset_1             48.062681 
+
+
+----- dataset: BISdata                   ----- model: gp_quasiperiodic              
+Hamp                  8.311384 
+
+----- dataset:  Sdata
+jitter_1              0.052312 
+jitter_0              0.034655 
+offset_0              0.860654 
+offset_1              0.895975 
+
+
+----- dataset: Sdata                     ----- model: gp_quasiperiodic              
+Hamp                  0.033410 
+
+----- common model:  b
+omega                90.000000 
+K                     6.280344 
+P                     0.280325 
+e                         0.00 
+Tc                57744.071580 
+
+----- common model:  c
+e                     0.000327 
+omega              -143.607678 
+K                     1.580444 
+P                     7.748995 
+Tc                58371.074641 
+
+----- common model:  activity
+Prot                 14.567544 
+Pdec                 29.481479 
+Oamp                  0.374783 
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model:  b
+Inclination fixed to 90 deg!
+a_Rs                  2.497952 
+M_Mj                  0.016816 
+M_Me                  5.345850 
+mean_long           347.756634 
+a_AU_(M)              0.007645 
+a_AU_(rho,R)          0.007645 
+
+----- common model:  c
+Inclination fixed to 90 deg!
+a_Rs                 22.427637 
+M_Mj                  0.012200 
+M_Me                  3.878325 
+mean_long            79.942276 
+a_AU_(M)              0.068244 
+a_AU_(rho,R)          0.068244 
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+****************************************************************************************************
+
+Inclination fixed to 90 deg!
+Inclination fixed to 90 deg!
+ Trying to identify the stellar parameters
+Note: stellar density derived from its mass and radius
+
+Inclination fixed to 90 deg!
+Inclination fixed to 90 deg!
+ Trying to identify the stellar parameters
+Inclination fixed to 90 deg!
+Inclination fixed to 90 deg!
+ Trying to identify the stellar parameters
+ Plot FLAT chain 
+
+****************************************************************************************************
+
+Plotting full_correlation plot with pygtc
+
+****************************************************************************************************
+
+ Plotting the chains... 
+
+****************************************************************************************************
+
+ Plotting the Gelman-Rubin traces... 
+
+     Gelman-Rubin:    11     1.012613 RVdata_jitter_1 
+     Gelman-Rubin:    12     1.007333 RVdata_jitter_0 
+     Gelman-Rubin:    13     1.009176 RVdata_offset_0 
+     Gelman-Rubin:    14     1.008868 RVdata_offset_1 
+     Gelman-Rubin:    15     1.012834 RVdata_gp_quasiperiodic_Hamp 
+     Gelman-Rubin:    16     1.007682 BISdata_jitter_1 
+     Gelman-Rubin:    17     1.010154 BISdata_jitter_0 
+     Gelman-Rubin:    18     1.008157 BISdata_offset_0 
+     Gelman-Rubin:    19     1.007654 BISdata_offset_1 
+     Gelman-Rubin:    20     1.011166 BISdata_gp_quasiperiodic_Hamp 
+     Gelman-Rubin:    21     1.006948 Sdata_jitter_1 
+     Gelman-Rubin:    22     1.007992 Sdata_jitter_0 
+     Gelman-Rubin:    23     1.007466 Sdata_offset_0 
+     Gelman-Rubin:    24     1.007695 Sdata_offset_1 
+     Gelman-Rubin:    25     1.010482 Sdata_gp_quasiperiodic_Hamp 
+     Gelman-Rubin:     0     1.010570 b_K 
+     Gelman-Rubin:     1     1.008384 b_P 
+     Gelman-Rubin:     2     1.006967 b_Tc 
+     Gelman-Rubin:     3     1.007016 c_sre_coso 
+     Gelman-Rubin:     4     1.008855 c_sre_sino 
+     Gelman-Rubin:     5     1.011974 c_K 
+     Gelman-Rubin:     6     1.007732 c_P 
+     Gelman-Rubin:     7     1.008547 c_Tc 
+     Gelman-Rubin:     8     1.007742 activity_Prot 
+     Gelman-Rubin:     9     1.016005 activity_Pdec 
+     Gelman-Rubin:    10     1.009904 activity_Oamp 
+
+****************************************************************************************************
+
+ Plotting the common models corner plots
+     Common model:  b
+     Common model:  c
+     Common model:  activity
+     Common model:  star_parameters
+
+****************************************************************************************************
+
+ Dataset + models corner plots 
+
+     Dataset:  RVdata     model:  gp_quasiperiodic  corner plot  starting 
+     Dataset:  RVdata     model:  gp_quasiperiodic  corner plot  done 
+     Dataset:  RVdata     model:  radial_velocities_b  corner plot  starting 
+     Dataset:  RVdata     model:  radial_velocities_b  corner plot  done 
+     Dataset:  RVdata     model:  radial_velocities_c  corner plot  starting 
+     Dataset:  RVdata     model:  radial_velocities_c  corner plot  done 
+     Dataset:  BISdata     model:  gp_quasiperiodic  corner plot  starting 
+     Dataset:  BISdata     model:  gp_quasiperiodic  corner plot  done 
+     Dataset:  Sdata     model:  gp_quasiperiodic  corner plot  starting 
+     Dataset:  Sdata     model:  gp_quasiperiodic  corner plot  done 
+
+****************************************************************************************************
+
+ Saving the planet parameter samplings to files (with plots)
+
+****************************************************************************************************
+
+ Saving all the parameter samplings to files (with plots)
+
+****************************************************************************************************
+
+ Computing the models for plot/data writing 
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+ Writing the plots 
+ Writing the   data files 
+ Writing the  MAP_ data files 
+ Writing the  sampleMED_ data files 
+
+****************************************************************************************************
+
