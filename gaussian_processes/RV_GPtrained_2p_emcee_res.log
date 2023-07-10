@@ -602,3 +602,86 @@ Plotting full_correlation plot with pygtc
 
 ****************************************************************************************************
 
+ Plotting the chains... 
+
+****************************************************************************************************
+
+ Plotting the Gelman-Rubin traces... 
+
+     Gelman-Rubin:    11     1.008809 RVdata_jitter_1 
+     Gelman-Rubin:    12     1.010694 RVdata_offset_1 
+     Gelman-Rubin:    13     1.010569 RVdata_offset_0 
+     Gelman-Rubin:    14     1.007388 RVdata_jitter_0 
+     Gelman-Rubin:    15     1.011261 RVdata_gp_quasiperiodic_Hamp 
+     Gelman-Rubin:    16     1.006452 BISdata_jitter_1 
+     Gelman-Rubin:    17     1.009403 BISdata_offset_1 
+     Gelman-Rubin:    18     1.008316 BISdata_offset_0 
+     Gelman-Rubin:    19     1.008652 BISdata_jitter_0 
+     Gelman-Rubin:    20     1.011808 BISdata_gp_quasiperiodic_Hamp 
+     Gelman-Rubin:    21     1.006379 Sdata_jitter_1 
+     Gelman-Rubin:    22     1.009159 Sdata_offset_1 
+     Gelman-Rubin:    23     1.009148 Sdata_offset_0 
+     Gelman-Rubin:    24     1.009257 Sdata_jitter_0 
+     Gelman-Rubin:    25     1.010211 Sdata_gp_quasiperiodic_Hamp 
+     Gelman-Rubin:     0     1.005601 b_P 
+     Gelman-Rubin:     1     1.009287 b_K 
+     Gelman-Rubin:     2     1.006827 b_Tc 
+     Gelman-Rubin:     3     1.008232 c_P 
+     Gelman-Rubin:     4     1.009310 c_K 
+     Gelman-Rubin:     5     1.009771 c_Tc 
+     Gelman-Rubin:     6     1.010325 c_sre_coso 
+     Gelman-Rubin:     7     1.005654 c_sre_sino 
+     Gelman-Rubin:     8     1.009715 activity_Prot 
+     Gelman-Rubin:     9     1.010207 activity_Oamp 
+     Gelman-Rubin:    10     1.011897 activity_Pdec 
+
+****************************************************************************************************
+
+ Plotting the common models corner plots
+     Common model:  b
+     Common model:  c
+     Common model:  activity
+     Common model:  star_parameters
+
+****************************************************************************************************
+
+ Dataset + models corner plots 
+
+     Dataset:  RVdata     model:  gp_quasiperiodic  corner plot  starting 
+     Dataset:  RVdata     model:  gp_quasiperiodic  corner plot  done 
+     Dataset:  RVdata     model:  radial_velocities_b  corner plot  starting 
+     Dataset:  RVdata     model:  radial_velocities_b  corner plot  done 
+     Dataset:  RVdata     model:  radial_velocities_c  corner plot  starting 
+     Dataset:  RVdata     model:  radial_velocities_c  corner plot  done 
+     Dataset:  BISdata     model:  gp_quasiperiodic  corner plot  starting 
+     Dataset:  BISdata     model:  gp_quasiperiodic  corner plot  done 
+     Dataset:  Sdata     model:  gp_quasiperiodic  corner plot  starting 
+     Dataset:  Sdata     model:  gp_quasiperiodic  corner plot  done 
+
+****************************************************************************************************
+
+ Saving the planet parameter samplings to files (with plots)
+
+****************************************************************************************************
+
+ Saving all the parameter samplings to files (with plots)
+
+****************************************************************************************************
+
+ Computing the models for plot/data writing 
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+     computing GP prediction for the whole temporal range, it may take a while...
+ Writing the plots 
+ Writing the   data files 
+ Writing the  MAP_ data files 
+ Writing the  sampleMED_ data files 
+
+****************************************************************************************************
+
