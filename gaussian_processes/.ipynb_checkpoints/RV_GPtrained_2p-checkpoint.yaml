@@ -78,11 +78,8 @@ solver:
     npop_mult: 4
   emcee:
     npop_mult: 4
-    nsteps: 100000
-    nburn: 25000
+    nsteps: 50000
+    nburn: 20000
     nsave: 25000
     thin: 100
-  nested_sampling:
-    nlive: 1000
-    sampling_efficiency: 0.30
   recenter_bounds: True

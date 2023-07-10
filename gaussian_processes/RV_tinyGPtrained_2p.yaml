@@ -81,6 +81,5 @@ solver:
     npop_mult: 4
     nsteps: 50000
     nburn: 20000
-    nsave: 25000
     thin: 100
   recenter_bounds: True
