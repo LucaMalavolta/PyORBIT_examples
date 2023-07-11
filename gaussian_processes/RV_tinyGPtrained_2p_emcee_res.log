@@ -3,8 +3,8 @@
 PyORBIT v10.0.0beta
 
 Python version in use:
-3.9.16 (main, Mar  8 2023, 14:00:05) 
-[GCC 11.2.0]
+3.9.12 (main, Jun  1 2022, 11:38:51) 
+[GCC 7.5.0]
  LaTeX disabled by default
 Using orbital model:  circular
 Using orbital parametrization:  Eastman2013_Tcent
@@ -15,7 +15,7 @@ Using orbital parametrization:  Eastman2013_Tcent
 Time of transit replacing mean longitude as a free parameter:  True
 
 
-emcee version:  3.1.4
+emcee version:  3.1.2
 
  Reference Time Tref: 59200.0
 
@@ -281,22 +281,22 @@ Oamp                     0.410       -0.066        0.084    (15-84 p)
 ----- common model:  b
 Inclination fixed to 90 deg!
 Computing planetary mass under the approximation M_planet << M_star (threshold at 30.0 Me)
-a_Rs                     2.357       -0.068        0.071    (15-84 p)
+a_Rs                     2.357       -0.067        0.071    (15-84 p)
 M_Mj                    0.0160      -0.0011       0.0011    (15-84 p)
-M_Me                      5.10        -0.36         0.36    (15-84 p)
+M_Me                      5.10        -0.35         0.37    (15-84 p)
 mean_long               348.10        -0.47         0.46    (15-84 p)
-a_AU_(M)              0.007471     -0.00010     0.000097    (15-84 p)
-a_AU_(rho,R)          0.007471     -0.00010     0.000097    (15-84 p)
+a_AU_(M)              0.007473     -0.00010     0.000096    (15-84 p)
+a_AU_(rho,R)          0.007473     -0.00010     0.000096    (15-84 p)
 
 ----- common model:  c
 Inclination fixed to 90 deg!
 Computing planetary mass under the approximation M_planet << M_star (threshold at 30.0 Me)
-a_Rs                     21.55        -0.63         0.65    (15-84 p)
+a_Rs                     21.55        -0.63         0.66    (15-84 p)
 M_Mj                     0.015       -0.011        0.018    (15-84 p)
 M_Me                       4.7         -3.4          5.8    (15-84 p)
 mean_long                 80.6         -6.2          9.0    (15-84 p)
-a_AU_(M)               0.06831     -0.00092      0.00088    (15-84 p)
-a_AU_(rho,R)           0.06831     -0.00092      0.00088    (15-84 p)
+a_AU_(M)               0.06829     -0.00091      0.00089    (15-84 p)
+a_AU_(rho,R)           0.06829     -0.00091      0.00089    (15-84 p)
 
 
 ====================================================================================================
@@ -420,21 +420,21 @@ Oamp                  0.376550
 
 ----- common model:  b
 Inclination fixed to 90 deg!
-a_Rs                  2.371164 
-M_Mj                  0.016928 
-M_Me                  5.381426 
+a_Rs                  2.209796 
+M_Mj                  0.015578 
+M_Me                  4.952034 
 mean_long           348.081016 
-a_AU_(M)              0.007705 
-a_AU_(rho,R)          0.007704 
+a_AU_(M)              0.007391 
+a_AU_(rho,R)          0.007391 
 
 ----- common model:  c
 Inclination fixed to 90 deg!
-a_Rs                 20.902437 
-M_Mj                  0.014174 
-M_Me                  4.505926 
+a_Rs                 21.225578 
+M_Mj                  0.012885 
+M_Me                  4.096094 
 mean_long            79.907711 
-a_AU_(M)              0.069425 
-a_AU_(rho,R)          0.069424 
+a_AU_(M)              0.066192 
+a_AU_(rho,R)          0.066192 
 
 
 ====================================================================================================
@@ -558,21 +558,21 @@ Oamp                  0.440695
 
 ----- common model:  b
 Inclination fixed to 90 deg!
-a_Rs                  2.302335 
-M_Mj                  0.015711 
-M_Me                  4.994547 
+a_Rs                  2.278396 
+M_Mj                  0.015443 
+M_Me                  4.909228 
 mean_long           347.988524 
-a_AU_(M)              0.007424 
-a_AU_(rho,R)          0.007424 
+a_AU_(M)              0.007360 
+a_AU_(rho,R)          0.007360 
 
 ----- common model:  c
 Inclination fixed to 90 deg!
-a_Rs                 21.364046 
-M_Mj                  0.025693 
-M_Me                  8.167778 
+a_Rs                 21.374449 
+M_Mj                  0.024597 
+M_Me                  7.819321 
 mean_long            82.859531 
-a_AU_(M)              0.069059 
-a_AU_(rho,R)          0.069058 
+a_AU_(M)              0.067570 
+a_AU_(rho,R)          0.067569 
 
 
 ====================================================================================================
@@ -669,3 +669,19 @@ Plotting full_correlation plot with pygtc
 ****************************************************************************************************
 
  Computing the models for plot/data writing 
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+     Splitting the plot array to allow GP prediction of extended datasets, it may take a while...
+ Writing the plots 
+ Writing the   data files 
+ Writing the  MAP_ data files 
+ Writing the  sampleMED_ data files 
+
+****************************************************************************************************
+
