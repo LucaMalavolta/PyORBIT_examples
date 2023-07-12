@@ -1,0 +1,399 @@
+**** USING NUMBA ****
+
+PyORBIT v10.0.0beta
+
+Python version in use:
+3.9.12 (main, Jun  1 2022, 11:38:51) 
+[GCC 7.5.0]
+
+reloaded_optimize:  False
+reloaded_pyde:  False
+reloaded_emcee:  False
+
+number of multiprocessing threads: 16
+
+parameters/safe_reload flag (must be True for tinygp):  False
+
+Opening:  RVdata
+Opening:  BISdata
+Opening:  Sdata
+Adding common model of planet:  b
+Adding common model of planet:  c
+Using orbital model:  circular
+Using orbital parametrization:  Eastman2013_Tcent
+Time of transit replacing mean longitude as a free parameter:  True
+
+Using orbital model:  keplerian
+Using orbital parametrization:  Eastman2013_Tcent
+Time of transit replacing mean longitude as a free parameter:  True
+
+
+====================================================================================================
+     Ids, spaces (s), boundaries (b) and priors (p) of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1      id:  11  s:Linear      b:[      0.0120,    1088.3783]   p:Uniform   []
+jitter_0      id:  12  s:Linear      b:[      0.0120,    1088.3783]   p:Uniform   []
+offset_1      id:  13  s:Linear      b:[ -13430.6237,    6632.5000]   p:Uniform   []
+offset_0      id:  14  s:Linear      b:[ -13430.6237,    6632.5000]   p:Uniform   []
+
+----- dataset: RVdata                    ----- model: gp_multidimensional           
+rot_amp       id:  15  s:Linear      b:[      0.0000,     100.0000]   p:Uniform   []
+con_amp       id:  16  s:Linear      b:[   -100.0000,     100.0000]   p:Uniform   []
+
+----- dataset:  BISdata
+jitter_1      id:  17  s:Linear      b:[      0.0240,    2176.7566]   p:Uniform   []
+jitter_0      id:  18  s:Linear      b:[      0.0240,    2176.7566]   p:Uniform   []
+offset_1      id:  19  s:Linear      b:[  -9995.0909,   10059.6000]   p:Uniform   []
+offset_0      id:  20  s:Linear      b:[  -9995.0909,   10059.6000]   p:Uniform   []
+
+----- dataset: BISdata                   ----- model: gp_multidimensional           
+rot_amp       id:  21  s:Linear      b:[   -100.0000,     100.0000]   p:Uniform   []
+con_amp       id:  22  s:Linear      b:[   -100.0000,     100.0000]   p:Uniform   []
+
+----- dataset:  Sdata
+jitter_1      id:  23  s:Linear      b:[      0.0000,       2.7200]   p:Uniform   []
+jitter_0      id:  24  s:Linear      b:[      0.0000,       2.7200]   p:Uniform   []
+offset_1      id:  25  s:Linear      b:[  -9999.3978,   10001.2170]   p:Uniform   []
+offset_0      id:  26  s:Linear      b:[  -9999.3978,   10001.2170]   p:Uniform   []
+
+----- dataset: Sdata                     ----- model: gp_multidimensional           
+con_amp       id:  27  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+rot_amp       derived (no id, space, bound)                           p:None   []
+
+----- common model:  b
+P             id:   0  s:Linear      b:[      0.2750,       0.2850]   p:Gaussian   [2.80324956e-01 6.70000000e-08]
+K             id:   1  s:Linear      b:[      0.0010,      20.0000]   p:Uniform   []
+Tc            id:   2  s:Linear      b:[  57744.0000,   57744.1000]   p:Gaussian   [5.77440715e+04 1.03000000e-04]
+omega         derived (no id, space, bound)                           p:None   []
+e             derived (no id, space, bound)                           p:None   []
+
+----- common model:  c
+sre_coso      id:   3  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+sre_sino      id:   4  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+P             id:   5  s:Linear      b:[      7.7000,       7.8000]   p:Gaussian   [7.7489943e+00 1.4900000e-05]
+K             id:   6  s:Linear      b:[      0.0010,      20.0000]   p:Uniform   []
+Tc            id:   7  s:Linear      b:[  58371.0000,   58371.1000]   p:Gaussian   [5.83710742e+04 6.52000000e-04]
+e             derived (no id, space, bound)                           p:Gaussian   [0.    0.098]
+omega         derived (no id, space, bound)                           p:Uniform   [0.0, 360.0]
+
+----- common model:  activity
+Pdec          id:   8  s:Linear      b:[     20.0000,    1000.0000]   p:Uniform   []
+Prot          id:   9  s:Linear      b:[     10.0000,      20.0000]   p:Uniform   []
+Oamp          id:  10  s:Log_Base2   b:[     -9.9658,       0.0000]   p:Uniform   []
+
+----- common model:  star_parameters
+mass          derived (no id, space, bound)                           p:Gaussian   [0.708 0.028]
+radius        derived (no id, space, bound)                           p:Gaussian   [0.681 0.018]
+density       derived (no id, space, bound)                           p:Gaussian   [2.65 0.08]
+
+Include priors:  True
+
+Reference Time Tref:  59200.0
+
+Dimensions =  28
+Nwalkers =  112
+
+Using threading pool for PyDE: True
+PyDE running
+Boundaries redefined after PyDE output
+PyDE completed, it took       1821.6 seconds
+
+====================================================================================================
+     Starting point of the sample/optimization routines    
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1        11      0.773336 [    0.0120,  1088.3783]
+jitter_0        12      4.816801 [    0.0120,  1088.3783]
+offset_1        13  -3380.070733 [-13430.6237,  6632.5000]
+offset_0        14  -3411.943327 [-13430.6237,  6632.5000]
+
+----- dataset: RVdata                    ----- model: gp_multidimensional           
+rot_amp         15     12.695525 [    0.0000,   100.0000]
+con_amp         16     -2.071703 [ -100.0000,   100.0000]
+
+----- dataset:  BISdata
+jitter_1        17      2.593782 [    0.0240,  2176.7566]
+jitter_0        18      0.061262 [    0.0240,  2176.7566]
+offset_1        19     50.913265 [-9995.0909, 10059.6000]
+offset_0        20     24.324893 [-9995.0909, 10059.6000]
+
+----- dataset: BISdata                   ----- model: gp_multidimensional           
+rot_amp         21    -14.704168 [ -100.0000,   100.0000]
+con_amp         22     -0.252319 [ -100.0000,   100.0000]
+
+----- dataset:  Sdata
+jitter_1        23      0.052669 [    0.0000,     2.7200]
+jitter_0        24      0.035404 [    0.0000,     2.7200]
+offset_1        25      0.901486 [-9999.3978, 10001.2170]
+offset_0        26      0.863563 [-9999.3978, 10001.2170]
+
+----- dataset: Sdata                     ----- model: gp_multidimensional           
+con_amp         27     -0.056226 [   -1.0000,     1.0000]
+
+----- common model:  b
+P                0      0.280325 [    0.2750,     0.2850]
+K                1      6.342094 [    0.0010,    20.0000]
+Tc               2  57744.071511 [57744.0000, 57744.1000]
+
+----- common model:  c
+sre_coso         3     -0.472949 [   -1.0000,     1.0000]
+sre_sino         4      0.112427 [   -1.0000,     1.0000]
+P                5      7.748994 [    7.7000,     7.8000]
+K                6      4.400334 [    0.0010,    20.0000]
+Tc               7  58371.074156 [58371.0000, 58371.1000]
+
+----- common model:  activity
+Pdec             8    906.231002 [   20.0000,  1000.0000]
+Prot             9     13.809407 [   10.0000,    20.0000]
+Oamp            10     -1.095825 [   -9.9658,     0.0000]
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Starting point projected onto the model parameter space     
+====================================================================================================
+
+----- dataset:  RVdata
+jitter_1              0.773336 
+jitter_0              4.816801 
+offset_1          -3380.070733 
+offset_0          -3411.943327 
+
+
+----- dataset: RVdata                    ----- model: gp_multidimensional           
+rot_amp              12.695525 
+con_amp              -2.071703 
+
+----- dataset:  BISdata
+jitter_1              2.593782 
+jitter_0              0.061262 
+offset_1             50.913265 
+offset_0             24.324893 
+
+
+----- dataset: BISdata                   ----- model: gp_multidimensional           
+rot_amp             -14.704168 
+con_amp              -0.252319 
+
+----- dataset:  Sdata
+jitter_1              0.052669 
+jitter_0              0.035404 
+offset_1              0.901486 
+offset_0              0.863563 
+
+
+----- dataset: Sdata                     ----- model: gp_multidimensional           
+rot_amp                   0.00 
+con_amp              -0.056226 
+
+----- common model:  b
+omega                90.000000 
+P                     0.280325 
+K                     6.342094 
+e                         0.00 
+Tc                57744.071511 
+
+----- common model:  c
+e                     0.236321 
+omega               166.628091 
+P                     7.748994 
+K                     4.400334 
+Tc                58371.074156 
+
+----- common model:  activity
+Pdec                906.231002 
+Prot                 13.809407 
+Oamp                  0.467868 
+
+----- common model:  star_parameters
+
+====================================================================================================
+     Derived parameters obtained from starting point     
+====================================================================================================
+
+----- common model:  b
+Inclination fixed to 90 deg!
+a_Rs                  2.263900 
+M_Mj                  0.016355 
+M_Me                  5.199004 
+mean_long           348.121001 
+a_AU_(M)              0.007502 
+a_AU_(rho,R)          0.007502 
+
+----- common model:  c
+Inclination fixed to 90 deg!
+a_Rs                 21.283907 
+M_Mj                  0.032721 
+M_Me                 10.401916 
+mean_long           105.023026 
+a_AU_(M)              0.067949 
+a_AU_(rho,R)          0.067948 
+
+
+====================================================================================================
+     Statistics on the log-likelihood     
+====================================================================================================
+
+ LN probability:  -425.508138 
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+*************************************************************
+
+Running emcee
+
+emcee version:  3.1.2
+Using threading pool for emcee: True
+
+Saving temporary steps
+
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324872e-01  5.55646927e+00  5.77440717e+04 -5.80073361e-01
+ -5.93033569e-02  7.74898148e+00  5.73274778e+00  5.83710756e+04
+  2.56382710e+02  1.49764184e+01 -8.30495332e-01  1.54363314e+00
+  6.97979466e+00 -3.37696062e+03 -3.41248625e+03  1.64783051e+01
+  1.36524087e+00  7.56954584e+00  1.86949546e-01  4.91156678e+01
+  2.82410550e+01 -1.55319856e+01 -2.63786688e+00  4.64652965e-02
+  3.17697508e-02  1.03136083e+00  9.97786935e-01 -1.07130132e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324862e-01  5.78441719e+00  5.77440715e+04 -3.85294089e-01
+  2.34352901e-01  7.74899317e+00  4.56397459e+00  5.83710737e+04
+  3.61833548e+02  1.36026907e+01 -3.35869164e-01  9.38497057e-01
+  5.54732127e+00 -3.37672212e+03 -3.40867486e+03  3.88597077e+01
+ -3.76740321e+00  4.96696754e-01  2.74034054e-01  5.48615956e+01
+  2.90936614e+01 -4.84447755e+01 -5.27552906e+00  6.29975153e-02
+  3.93006509e-02  1.01950218e+00  9.78840634e-01 -1.52328731e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80325034e-01  5.78128635e+00  5.77440715e+04 -4.48792429e-01
+  8.84539177e-02  7.74898764e+00  6.10526942e+00  5.83710735e+04
+  1.33094913e+02  1.37066747e+01 -4.60707696e-01  1.32246041e+00
+  5.21013602e+00 -3.37861029e+03 -3.41076341e+03  4.51117630e+01
+  1.34162133e+00  3.15643282e+00  9.92311343e-02  4.39236111e+01
+  1.89163701e+01 -4.87109660e+01 -1.57551740e+01  6.13081073e-02
+  4.79800992e-02  8.48599342e-01  8.16538218e-01 -1.68216585e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324903e-01  5.93108999e+00  5.77440716e+04 -2.42074470e-01
+  1.40582998e-01  7.74899691e+00  4.07960399e+00  5.83710746e+04
+  4.46078093e+02  1.36940974e+01 -2.31739548e-01  8.60527294e-01
+  5.36568119e+00 -3.38727571e+03 -3.41665937e+03  5.26407029e+01
+ -1.61069337e+01  1.94501282e+00  8.71318238e-01  4.59879180e+01
+  2.18079901e+01 -6.52505241e+01 -7.47605357e+00  7.34033478e-02
+  4.30647588e-02  8.45422543e-01  7.99296046e-01 -1.51398108e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324907e-01  6.25874295e+00  5.77440714e+04 -3.50423612e-01
+  9.11181378e-02  7.74898609e+00  4.74256522e+00  5.83710732e+04
+  1.88425308e+02  1.43817830e+01 -6.07240121e-01  8.61805384e-01
+  4.89002214e+00 -3.38179623e+03 -3.41561293e+03  3.62245191e+01
+ -5.29605360e+00  1.89059090e+00  1.86982796e+00  4.94176429e+01
+  2.58092816e+01 -4.09398526e+01 -2.80707562e-01  4.89932660e-02
+  3.81279881e-02  8.37896692e-01  7.92308191e-01 -1.35594541e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80325006e-01  6.32412798e+00  5.77440716e+04 -1.60683335e-01
+  7.98112876e-02  7.74899238e+00  4.60805936e+00  5.83710757e+04
+  4.36041345e+02  1.37622343e+01 -3.60012383e-01  2.41312398e-01
+  4.60658823e+00 -3.37276544e+03 -3.40319567e+03  5.01606945e+01
+ -1.54092782e+01  3.16172855e+00  1.58379765e+00  4.87485928e+01
+  2.55656068e+01 -5.45674674e+01  1.62533398e+00  5.88425563e-02
+  3.25843929e-02  9.71635057e-01  9.42669496e-01 -1.72569191e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80325020e-01  7.92130919e+00  5.77440714e+04 -2.61949713e-01
+  1.04097259e-01  7.74899270e+00  3.07667845e+00  5.83710735e+04
+  3.13476764e+02  1.41355151e+01 -2.10953237e-01  2.56029380e+00
+  5.73583927e+00 -3.37845123e+03 -3.41183377e+03  4.76597037e+01
+ -4.99279478e+00  2.93124709e+00  1.59829706e+00  5.03996254e+01
+  2.47794755e+01 -4.94614137e+01 -2.13835339e+00  4.98092114e-02
+  2.83790924e-02  9.02327532e-01  8.68987402e-01 -1.77338203e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324940e-01  5.80681498e+00  5.77440715e+04 -5.04262613e-02
+  1.90266667e-01  7.74896482e+00  3.38041747e+00  5.83710740e+04
+  4.36241045e+02  1.39816196e+01 -6.68084022e-01  1.71083188e+00
+  5.94123880e+00 -3.38018870e+03 -3.41141163e+03  2.75136221e+01
+ -3.71759597e+00  1.86457290e+00  2.26531227e+00  5.01500140e+01
+  2.35069860e+01 -3.51574340e+01 -3.20168356e+00  6.91309142e-02
+  3.36634511e-02  8.77946646e-01  8.51794598e-01 -1.26627282e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324990e-01  6.84829310e+00  5.77440715e+04 -3.12491832e-01
+  2.05018651e-01  7.74899011e+00  4.61387475e+00  5.83710746e+04
+  5.24787336e+02  1.41046003e+01 -4.65361379e-01  1.44742989e+00
+  6.95993536e+00 -3.36546439e+03 -3.39733682e+03  3.59643500e+01
+ -1.74884646e+01  2.26630502e+00  1.83916146e+00  4.80856262e+01
+  2.28103242e+01 -4.27866094e+01  1.81528646e+00  6.58837240e-02
+  3.79923865e-02  1.05362821e+00  9.96139691e-01 -1.71912525e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80325168e-01  7.90068189e+00  5.77440714e+04 -2.13530731e-01
+  1.25001979e-01  7.74902635e+00  4.37449391e+00  5.83710737e+04
+  7.98319333e+02  1.38194789e+01 -9.80896185e-01  2.85246176e+00
+  4.69122192e+00 -3.37707551e+03 -3.40780219e+03  2.70025653e+01
+ -5.83037411e+00  6.09724465e+00  6.35423688e-01  4.93445230e+01
+  2.50601439e+01 -3.00895587e+01 -1.83166322e+00  7.43352024e-02
+  3.38977604e-02  9.91204487e-01  9.50912205e-01 -9.42732365e-02]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324804e-01  6.96666510e+00  5.77440715e+04  2.95147398e-01
+  3.40193006e-01  7.74897989e+00  6.40683851e+00  5.83710735e+04
+  2.66524772e+02  1.39821558e+01 -4.21535468e-01  1.72158896e+00
+  5.52861576e+00 -3.36941545e+03 -3.40204955e+03  2.30095540e+01
+ -1.15509579e+01  2.85253094e+00  1.19128791e+00  5.24202020e+01
+  2.69171866e+01 -4.36515901e+01  1.29456847e+00  5.54447286e-02
+  3.11319499e-02  1.08062320e+00  1.03782767e+00 -7.36303802e-02]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80325002e-01  6.44458672e+00  5.77440714e+04 -1.98801945e-01
+  1.49838705e-01  7.74900685e+00  2.84691031e+00  5.83710743e+04
+  6.99346191e+02  1.44620945e+01 -5.89941059e-01  5.53510105e-01
+  5.54983500e+00 -3.37772092e+03 -3.41175932e+03  3.27054210e+01
+ -3.36668655e+00  2.28025626e+00  2.74913875e+00  4.88890082e+01
+  2.44493108e+01 -3.87695697e+01  1.87542713e+00  5.05774074e-02
+  3.10145258e-02  9.42124021e-01  9.09179841e-01 -1.17859820e-01]
+  args: []
+  kwargs: {}
+  exception:
+emcee: Exception while calling your likelihood function:
+  params: [ 2.80324977e-01  6.71444844e+00  5.77440715e+04 -4.11470534e-01
+ -5.47324510e-02  7.74899713e+00  3.42309442e+00  5.83710738e+04
+  6.20392026e+02  1.35336228e+01 -5.74121473e-01  8.70601589e-01
+  6.12109529e+00 -3.38219648e+03 -3.41472418e+03  3.05491887e+01
+ -8.90380093e+00  1.75130481e+00  1.23275373e-01  5.19115084e+01
+  2.54266614e+01 -4.08629655e+01  7.85497211e-01  6.11308635e-02
+  4.54543232e-02  9.01318256e-01  8.43342462e-01 -1.32662118e-01]
+  args: []
+  kwargs: {}
+  exception:

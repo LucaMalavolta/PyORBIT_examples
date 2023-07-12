@@ -27,8 +27,8 @@ solver:
     npop_mult: 4
   emcee:
     npop_mult: 4
-    nsteps: 20000
-    nburn: 10000
+    nsteps: 50000
+    nburn: 20000
     thin: 100
   nested_sampling:
     nlive: 1000
