@@ -19,7 +19,7 @@ common:
   planets:
     b:
       orbit: circular
-      parametrization: Eastman2013_Tcent
+      use_time_inferior_conjunction: True
       boundaries:
         P: [0.2750, 0.2850]
         K: [0.001, 20.0]
@@ -32,7 +32,8 @@ common:
         K: Linear
     c:
       orbit: keplerian
-      parametrization: Eastman2013_Tcent #Default
+      parametrization: Eastman2013
+      use_time_inferior_conjunction: True
       boundaries:
         P: [7.70, 7.80]
         K: [0.001, 20.0]
