@@ -1,4 +1,19 @@
 inputs:
+  Bouchy2005_RV01_noRML:
+    file: Bouchy2005_RV01_noRML_PyORBIT.dat
+    kind: RV
+    models:
+      - radial_velocities
+  Winn2006_RV02_noRML:
+    file: Winn2006_RV02_noRML_PyORBIT.dat
+    kind: RV
+    models:
+      - radial_velocities
+  Boisse2009_RV03_noRML:
+    file: Boisse2009_RV03_noRML_PyORBIT.dat
+    kind: RV
+    models:
+      - radial_velocities
   LCdata_TESS:
     file: HD189733_TESS_PyORBIT.dat
     kind: Phot
@@ -27,11 +42,14 @@ inputs:
 common:
   planets:
     b:
-      orbit: circular
+      orbit: keplerian
+      parametrization: Eastman2013
       use_time_inferior_conjunction: True
       boundaries:
         P: [2.2185600, 2.2185800]
         Tc: [2459770.4100, 2459770.4110]
+        K: [0.01, 300.0]
+        e: [0.00, 0.95]
       spaces:
         P: Linear
   star:
@@ -50,6 +68,9 @@ common:
         ld_c1: ['Gaussian', 0.45, 0.05]
         ld_c2: ['Gaussian', 0.13, 0.05]
 models:
+  radial_velocities:
+    planets:
+      - b
   lc_model_TESS:
     model: batman_transit
     limb_darkening: limb_darkening_TESS

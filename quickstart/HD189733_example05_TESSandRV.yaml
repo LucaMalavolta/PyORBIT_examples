@@ -4,6 +4,11 @@ inputs:
     kind: Phot
     models:
       - lc_model
+  Bouchy2005_RV01_noRML:
+    file: Bouchy2005_RV01_noRML_PyORBIT.dat
+    kind: RV
+    models:
+      - radial_velocities
 common:
   planets:
     b:
@@ -12,6 +17,7 @@ common:
       boundaries:
         P: [2.2185600, 2.2185800]
         Tc: [2459770.4100, 2459770.4110]
+        K: [0.01, 300.0]
       spaces:
         P: Linear
   star:
@@ -24,6 +30,9 @@ common:
       model: ld_quadratic
       parametrization: Kipping
 models:
+  radial_velocities:
+    planets:
+      - b
   lc_model:
     model: batman_transit
     limb_darkening: limb_darkening
