@@ -51,7 +51,7 @@ common:
         ld_c2: ['Gaussian', 0.13, 0.05]
 models:
   lc_model_TESS:
-    model: batman_transit
+    model: pytransit_transit
     limb_darkening: limb_darkening_TESS
     planets:
       - b
