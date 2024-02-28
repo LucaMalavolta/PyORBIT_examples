@@ -71,9 +71,9 @@ common:
       boundaries:
         rotation_period: [8.0, 10.0]
       priors:
-        mass: ['Gaussian', 0.708, 0.028]
-        radius: ['Gaussian', 0.681, 0.018]
-        density: ['Gaussian', 2.65, 0.08]
+        mass: ['Gaussian', 0.76, 0.03]
+        radius: ['Gaussian', 0.690, 0.036]
+        density: ['Gaussian', 2.3, 0.4]
         rotation_period: ['Gaussian', 8.8, 0.1]
   common_offset_RV:
     model: common_offset
