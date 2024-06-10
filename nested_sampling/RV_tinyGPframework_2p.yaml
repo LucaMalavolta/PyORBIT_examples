@@ -96,6 +96,6 @@ solver:
     nsteps: 50000
     nburn: 20000
     thin: 100
-  nested_Sampling:
+  nested_sampling:
     nlive: 500
   recenter_bounds: True
