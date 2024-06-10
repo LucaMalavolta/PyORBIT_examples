@@ -74,7 +74,7 @@ models:
 parameters:
   Tref: 59200.00
   safe_reload: True
-  cpu_threads: 6
+  cup_threads: 32
 solver:
   pyde:
     ngen: 50000

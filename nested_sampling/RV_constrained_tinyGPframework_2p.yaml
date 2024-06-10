@@ -101,6 +101,7 @@ parameters:
   safe_reload: True
   low_ram_plot: True
   plot_split_threshold: 1000
+  cup_threads: 32
 solver:
   pyde:
     ngen: 50000
