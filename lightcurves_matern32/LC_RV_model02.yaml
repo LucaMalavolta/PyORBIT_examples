@@ -2,7 +2,7 @@ inputs:
   LCdata_TESS:
     file: datasets/TESS_PyORBIT.dat
     kind: Phot
-    models: 
+    models:
       - lc_model_tess
       - normalization_factor
   LCdata_ASIAGO:
@@ -70,6 +70,8 @@ common:
 models:
   normalization_factor:
     type: local_normalization_factor
+    boundaries:
+      n_factor: [0.8, 1.2]
   celerite2_matern32_asiago:
     type: celerite2_matern32
   celerite2_matern32_crow1:
@@ -102,14 +104,14 @@ parameters:
   Tref: 0000.00
 solver:
   pyde:
-    ngen: 20000
+    ngen: 50000
     npop_mult: 4
   emcee:
     npop_mult: 4
-    nsteps: 40000
+    nsteps: 50000
     nburn: 20000
     thin: 100
   nested_sampling:
-    nlive: 1000
+    nlive: 500
     pfrac: 0.00
   recenter_bounds: True
