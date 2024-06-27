@@ -22,7 +22,7 @@ common:
       use_time_inferior_conjunction: True
       boundaries:
         P: [4.8, 5.0]
-        K: [50.0, 150.0]
+        K: [0.0, 50.0]
         Tc: [2454957.81, 2454957.82]
         e: [0.0, 0.5]
       priors:
@@ -68,7 +68,7 @@ parameters:
   safe_reload: True
   low_ram_plot: True
   plot_split_threshold: 1000
-  cpu_threads: 32
+  cpu_threads: 16
 solver:
   pyde:
     ngen: 50000
