@@ -4,17 +4,20 @@ inputs:
     kind: RV
     models:
       - radial_velocities
-      - tinygp_quasiperiodic_cosine
+      - spleaf_multi_esp
+      - polynomial_trend
   Sindex_data:
     file: HAT-P-11_Sindex_PyORBIT.dat
     kind: S_index
     models:
-      - tinygp_quasiperiodic_cosine
+      - spleaf_multi_esp
+      - polynomial_trend
   Halpha_data:
     file: HAT-P-11_Halpha_PyORBIT.dat
     kind: Halpha
     models:
-      - tinygp_quasiperiodic_cosine
+      - spleaf_multi_esp
+      - polynomial_trend
 common:
   planets:
     b:
@@ -48,26 +51,35 @@ models:
   radial_velocities:
     planets:
       - b
-  tinygp_quasiperiodic_cosine:
-    model: tinygp_quasiperiodic_cosine
+  polynomial_trend:
+    model: shared_polynomial_trend
+    variable_amplitude: True
+    time_offset: True
+    order: 3
+  spleaf_multi_esp:
+    model: spleaf_multidimensional_esp
     common: activity
+    n_harmonics: 4
     hyperparameters_condition: True
     rotation_decay_condition: True
     RV_data:
       boundaries:
-        Hamp: [0.0, 50.0]
-        Camp: [0.0, 50.0]
+        rot_amp: [0.0, 100.0] #at least one must be positive definite
+        con_amp: [-100.0, 100.0]
+      derivative: True
     Sindex_data:
       boundaries:
-        Hamp: [0.0, 1.0]
-        Camp: [0.0, 1.0]
+        rot_amp: [-2.0, 2.0]
+        con_amp: [-2.0, 2.0]
+      derivative: True
     Halpha_data:
       boundaries:
-        Hamp: [0.0, 1.0]
-        Camp: [0.0, 1.0]
+        rot_amp: [-2.0, 2.0]
+        con_amp: [-2.0, 2.0]
+      derivative: True
 parameters:
   Tref: 2454957.8132067
-  safe_reload: True
+  #safe_reload: True
   low_ram_plot: True
   plot_split_threshold: 1000
   cpu_threads: 16

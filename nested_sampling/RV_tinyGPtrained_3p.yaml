@@ -81,8 +81,8 @@ models:
       Hamp: [0.0, 100.0] # same range for all datasets
 parameters:
   Tref: 59200.00
-  safe_reload:
-  cup_threads: 32
+  safe_reload: True
+  cup_threads: 16
 solver:
   pyde:
     ngen: 50000

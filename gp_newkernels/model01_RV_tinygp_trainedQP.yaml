@@ -37,8 +37,8 @@ common:
     boundaries:
       Prot: [25.0, 40.0]
       Pdec: [25.0, 500.0]
-      Pcyc: [500.0, 3000.0]
-      Oamp: [0.001, 1.0]
+      Pcyc: [200.0, 3000.0]
+      Oamp: [0.001, 2.0]
   star:
     star_parameters:
       priors:

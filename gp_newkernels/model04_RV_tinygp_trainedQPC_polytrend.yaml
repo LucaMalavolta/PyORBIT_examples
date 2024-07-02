@@ -5,16 +5,19 @@ inputs:
     models:
       - radial_velocities
       - tinygp_quasiperiodic_cosine
+      - polynomial_trend
   Sindex_data:
     file: HAT-P-11_Sindex_PyORBIT.dat
     kind: S_index
     models:
       - tinygp_quasiperiodic_cosine
+      - polynomial_trend
   Halpha_data:
     file: HAT-P-11_Halpha_PyORBIT.dat
     kind: Halpha
     models:
       - tinygp_quasiperiodic_cosine
+      - polynomial_trend
 common:
   planets:
     b:
@@ -48,6 +51,11 @@ models:
   radial_velocities:
     planets:
       - b
+  polynomial_trend:
+    model: shared_polynomial_trend
+    variable_amplitude: True
+    time_offset: True
+    order: 3
   tinygp_quasiperiodic_cosine:
     model: tinygp_quasiperiodic_cosine
     common: activity
