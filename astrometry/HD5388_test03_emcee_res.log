@@ -1,0 +1,407 @@
+
+:::---::: PyORBIT v12.0.0b :::---:::
+
+Python version in use:
+3.10.18 (main, Jun  5 2025, 13:14:17) [GCC 11.2.0]
+LaTeX disabled by default
+
+*** planet b global parameters:
+    orbital model:  keplerian
+    orbital parametrization:  Eastman2013
+    inclination replacing impact parameter as a free parameter:  True
+    planetary mass replacing RV semi-amplitude as a free parameter:  True
+        WARNING: You will need to use either inclination or impact parameter as free/fixed parameter
+    mean longitude as free parameter (non-transiting planets or dynamical model):  True
+    longitude of ascending node as a free parameter:  False
+
+ ****** Initializing model:  radial_velocities_b  ******
+ ****** Initializing model:  orbitize_b  ******
+Using HGCA catalog stored in /home/malavolta/CODE/others/anaconda3/envs/pyorbit/lib/python3.10/site-packages/orbitize/example_data/HGCA_vEDR3.fits
+*** orbitize_b global parameters:
+Using HGCA catalog stored in /home/malavolta/CODE/others/anaconda3/envs/pyorbit/lib/python3.10/site-packages/orbitize/example_data/HGCA_vEDR3.fits
+
+### PyORBIT version used in the analysis:  12.0.0b
+
+ emcee version:  3.1.6
+
+ Reference Time Tref: 2453600.0
+
+ Data points:91
+ Dimensions: 13
+ Nwalkers:   52
+ Steps:      20000
+ Burn-in:    10000
+ Thin:       100
+
+
+Number of samplings: 5200
+
+Recomputing log-prior, it may take a while...
+
+ln-probability   distribution:   -325.12       -2.80      2.13 (15-84 p) 
+ln-prior         distribution:    -63.36       -1.31      0.72 (15-84 p) 
+ln-likelihood    distribution:   -261.48       -2.49      1.83 (15-84 p) 
+
+
+*** Information criteria using the likelihood distribution
+
+ BIC from distribution  (using likelihood)  =    581.59     -3.66    4.97 (15-84 p)
+ AIC from distribution  (using likelihood)  =    548.95     -3.66    4.97 (15-84 p)
+ AICc from distribution (using likelihood)  =    553.68     -3.66    4.97 (15-84 p)
+
+
+*** Information criteria using the median parameter set
+
+ ln_probability of Median solution =   -319.64
+ ln_priors of Median solution      =    -62.24
+ ln_likelihood of Median solution  =   -257.41
+
+ Median BIC  (using likelihood) =    573.45
+ Median AIC  (using likelihood) =    540.81
+ Median AICc (using likelihood) =    545.54
+
+
+*** Information criteria using the MAP parameter set
+
+ ln_probability of MAP solution =   -319.91
+ ln_priors of MAP solution      =    -62.46
+ ln_likelihood of MAP solution  =   -257.45
+
+ MAP BIC  (using likelihood)    =    573.54
+ MAP AIC  (using likelihood)    =    540.90
+ MAP AICc (using likelihood)    =    545.63
+
+ AICc suggested over AIC because NDATA ( 91 ) < 40 * NDIM ( 13 )
+
+****************************************************************************************************
+
+
+Computing the autocorrelation time of the chains
+
+***** WARNING ******
+The integrated autocorrelation time cannot be reliably estimated
+likely the chains are too short, and ACF analysis is not fully reliable
+emcee.autocorr.integrated_time tolerance lowered to 20
+If you still get a warning, you should drop these results entirely
+Chains too short to apply convergence criteria
+They should be at least 800*nthin = 80000
+
+WARNING: ACF computation failed, no plot will be generated 
+
+
+====================================================================================================
+     Ids, spaces (s), boundaries (b) and priors (p) of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0      id:  10  s:Linear      b:[      0.0101,    1374.2411]   p:Uniform   []
+offset_0      id:  11  s:Linear      b:[  29149.1135,   49253.0251]   p:Uniform   []
+offset_1      id:  12  s:Linear      b:[  29149.1135,   49253.0251]   p:Uniform   []
+
+----- dataset:  orbitize_file
+
+----- common model:  b
+P             id:   0  s:Log_Base2   b:[      6.6439,      13.2877]   p:Uniform   []
+sre_coso      id:   1  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+sre_sino      id:   2  s:Linear      b:[     -1.0000,       1.0000]   p:Uniform   []
+mean_long     id:   3  s:Linear      b:[     53.1930,     413.1930]   p:Uniform   []
+M_Me          id:   4  s:Log_Base2   b:[      6.6439,      11.5507]   p:Uniform   []
+i             id:   5  s:Linear      b:[      0.0000,      90.0000]   p:Uniform   []
+Omega         id:   7  s:Linear      b:[    179.7857,     539.7857]   p:Uniform   []
+e             derived (no id, space, bound)                           p:Uniform   [0.  0.9]
+omega         derived (no id, space, bound)                           p:Uniform   [0.0, 360.0]
+
+----- common model:  star_parameters
+mass          id:   6  s:Linear      b:[      0.0000,       2.0000]   p:Gaussian   [1.21 0.05]
+parallax      id:   8  s:Linear      b:[      0.0010,    2000.0000]   p:Gaussian   [30.56  0.09]
+radius        id:   9  s:Linear      b:[      0.0000,       2.0000]   p:Gaussian   [1.91 0.05]
+density       derived (no id, space, bound)                           p:Uniform   [0.0, 5.0]
+
+
+****************************************************************************************************
+****************************************************************************************************
+
+Confidence intervals (median value, 34.135th percentile from the median on the left and right side)
+
+====================================================================================================
+     Statistics on the posterior of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0        10          2.99        -0.41         0.45   (15-84 p)   [    0.0101,  1374.2411]
+offset_0        11      39185.84        -0.75         0.75   (15-84 p)   [29149.1135, 49253.0251]
+offset_1        12       39199.8         -2.0          2.1   (15-84 p)   [29149.1135, 49253.0251]
+
+----- dataset:  orbitize_file
+
+----- common model:  b
+P                0        9.5957      -0.0023       0.0023   (15-84 p)   [    6.6439,    13.2877]
+sre_coso         1         0.524       -0.019        0.020   (15-84 p)   [   -1.0000,     1.0000]
+sre_sino         2        -0.358       -0.030        0.031   (15-84 p)   [   -1.0000,     1.0000]
+mean_long        3           284          -61           63   (15-84 p)   [   53.1930,   413.1930]
+M_Me             4          9.81        -0.45         0.86   (15-84 p)   [    6.6439,    11.5507]
+i                5            45          -22           30   (15-84 p)   [    0.0000,    90.0000]
+Omega            7           410          -61           63   (15-84 p)   [  179.7857,   539.7857]
+
+----- common model:  star_parameters
+mass             6         1.211       -0.050        0.047   (15-84 p)   [    0.0000,     2.0000]
+parallax         8        30.561       -0.091        0.091   (15-84 p)   [    0.0010,  2000.0000]
+radius           9         1.909       -0.050        0.047   (15-84 p)   [    0.0000,     2.0000]
+
+====================================================================================================
+     Statistics on the model parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0                  2.99        -0.41         0.45    (15-84 p)
+offset_0              39185.84        -0.75         0.75    (15-84 p)
+offset_1               39199.8         -2.0          2.1    (15-84 p)
+
+
+----- dataset:  orbitize_file
+
+
+----- common model:  b
+P                        773.7         -1.2          1.2    (15-84 p)
+mean_long                  287          -60           64    (15-84 p)
+M_Me                       897         -241          736    (15-84 p)
+i                           45          -22           30    (15-84 p)
+e                        0.404       -0.020        0.020    (15-84 p)
+omega                    -34.3         -2.9          2.9    (15-84 p)
+Omega                      413          -60           64    (15-84 p)
+
+----- common model:  star_parameters
+mass                     1.211       -0.050        0.047    (15-84 p)
+parallax                30.561       -0.091        0.091    (15-84 p)
+radius                   1.909       -0.050        0.047    (15-84 p)
+density                  0.174       -0.014        0.016    (15-84 p)
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model: planet  b
+a_Rs                     198.0         -5.5          6.0    (15-84 p)
+M_Mj                      2.82        -0.76          2.3    (15-84 p)
+Tc                   2453969.0         -6.7          6.6    (15-84 p)
+a_AU_(M)                 1.760       -0.025        0.023    (15-84 p)
+a_AU_(rho,R)             1.758       -0.025        0.023    (15-84 p)
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+****************************************************************************************************
+
+Parameters corresponding to the Maximum a Posteriori probability ( -319.9096993849593 )
+
+====================================================================================================
+     Statistics on the posterior of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0        10      2.598624 [    0.0101,  1374.2411]
+offset_0        11  39185.550458 [29149.1135, 49253.0251]
+offset_1        12  39201.827541 [29149.1135, 49253.0251]
+
+----- dataset:  orbitize_file
+
+----- common model:  b
+P                0      9.595306 [    6.6439,    13.2877]
+sre_coso         1      0.524688 [   -1.0000,     1.0000]
+sre_sino         2     -0.335750 [   -1.0000,     1.0000]
+mean_long        3    255.082768 [   53.1930,   413.1930]
+M_Me             4     11.349437 [    6.6439,    11.5507]
+i                5     13.884544 [    0.0000,    90.0000]
+Omega            7    381.788442 [  179.7857,   539.7857]
+
+----- common model:  star_parameters
+mass             6      1.201130 [    0.0000,     2.0000]
+parallax         8     30.569124 [    0.0010,  2000.0000]
+radius           9      1.878122 [    0.0000,     2.0000]
+
+====================================================================================================
+     Statistics on the model parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0              2.598624 
+offset_0          39185.550458 
+offset_1          39201.827541 
+
+
+----- dataset:  orbitize_file
+
+
+----- common model:  b
+P                   773.525998 
+mean_long           255.082768 
+M_Me               2609.281996 
+i                    13.884544 
+e                     0.388025 
+omega               -32.615315 
+Omega               381.788442 
+
+----- common model:  star_parameters
+mass                  1.201130 
+parallax             30.569124 
+radius                1.878122 
+density               0.181309 
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model: planet  b
+a_Rs                200.619066 
+M_Mj                  8.208020 
+Tc              2453972.306778 
+a_AU_(M)              1.756801 
+a_AU_(rho,R)          1.752992 
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+****************************************************************************************************
+
+Parameters corresponding to the sample closest to the median values ( -320.736177421786 )
+
+====================================================================================================
+     Statistics on the posterior of the sampler parameters     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0        10      2.752294 [    0.0101,  1374.2411]
+offset_0        11  39186.287676 [29149.1135, 49253.0251]
+offset_1        12  39200.173857 [29149.1135, 49253.0251]
+
+----- dataset:  orbitize_file
+
+----- common model:  b
+P                0      9.596358 [    6.6439,    13.2877]
+sre_coso         1      0.540633 [   -1.0000,     1.0000]
+sre_sino         2     -0.348900 [   -1.0000,     1.0000]
+mean_long        3    279.379914 [   53.1930,   413.1930]
+M_Me             4      9.864830 [    6.6439,    11.5507]
+i                5     42.481279 [    0.0000,    90.0000]
+Omega            7    404.805339 [  179.7857,   539.7857]
+
+----- common model:  star_parameters
+mass             6      1.181509 [    0.0000,     2.0000]
+parallax         8     30.538214 [    0.0010,  2000.0000]
+radius           9      1.918683 [    0.0000,     2.0000]
+
+====================================================================================================
+     Statistics on the model parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- dataset:  RV_data
+jitter_0              2.752294 
+offset_0          39186.287676 
+offset_1          39200.173857 
+
+
+----- dataset:  orbitize_file
+
+
+----- common model:  b
+P                   774.090150 
+mean_long           279.379914 
+M_Me                932.416151 
+i                    42.481279 
+e                     0.414015 
+omega               -32.836365 
+Omega               404.805339 
+
+----- common model:  star_parameters
+mass                  1.181509 
+parallax             30.538214 
+radius                1.918683 
+density               0.167274 
+
+====================================================================================================
+     Statistics on the derived parameters obtained from the posteriors samples     
+====================================================================================================
+
+----- common model: planet  b
+a_Rs                195.397812 
+M_Mj                  2.933102 
+Tc              2453962.772071 
+a_AU_(M)              1.745623 
+a_AU_(rho,R)          1.744242 
+
+
+====================================================================================================
+     ------------------------------------------------------------------------------------------     
+====================================================================================================
+
+
+
+****************************************************************************************************
+
+Note: stellar mass, radius and density provided independently, 
+    no check for consistency among posteriors is performed
+
+Plot FLAT chain 
+
+****************************************************************************************************
+
+Plotting full_correlation plot with pygtc
+
+****************************************************************************************************
+
+Plotting the chains... 
+
+****************************************************************************************************
+
+Plotting the Gelman-Rubin traces... 
+
+    Gelman-Rubin:    10     1.015563 RV_data_jitter_0 
+    Gelman-Rubin:    11     1.008133 RV_data_offset_0 
+    Gelman-Rubin:    12     1.007980 RV_data_offset_1 
+    Gelman-Rubin:     0     1.007521 b_P 
+    Gelman-Rubin:     1     1.007659 b_sre_coso 
+    Gelman-Rubin:     2     1.008163 b_sre_sino 
+    Gelman-Rubin:     3     1.015961 b_mean_long 
+    Gelman-Rubin:     4     1.042169 b_M_Me 
+    Gelman-Rubin:     5     1.040299 b_i 
+    Gelman-Rubin:     7     1.015857 b_Omega 
+    Gelman-Rubin:     6     1.011527 star_parameters_mass 
+    Gelman-Rubin:     8     1.008251 star_parameters_parallax 
+    Gelman-Rubin:     9     1.008361 star_parameters_radius 
+
+****************************************************************************************************
+
+Plotting the common models corner plots
+    Common model:  b
+    Common model:  star_parameters
+
+****************************************************************************************************
+
+Plotting the dataset + models corner plots 
+
+    Dataset:  RV_data     model:  radial_velocities_b  corner plot  starting 
+    Dataset:  RV_data     model:  radial_velocities_b  corner plot  done 
+    Dataset:  orbitize_file     model:  orbitize_b  corner plot  starting 
+    Dataset:  orbitize_file     model:  orbitize_b  corner plot  done 
+
+****************************************************************************************************
+
+Saving the planet parameter samplings to files (with plots)
+
+****************************************************************************************************
+
+Saving all the parameter samplings to files (with plots)
+
+****************************************************************************************************
+
+Computing the models for plot/data writing
+
+    Dataset: RV_data              step size for model plot: 0.00049 days (0.71 minutes), # points: 14198906

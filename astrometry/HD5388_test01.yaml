@@ -1,0 +1,40 @@
+inputs:
+  RV_data:
+    file: HD5388_RV.dat
+    kind: RV
+    models:
+      - radial_velocities
+common:
+  planets:
+    b:
+      orbit: keplerian
+      use_mass: True
+      use_inclination: True
+      boundaries:
+        P: [100.0, 10000.0]
+        M_Me: [100, 3000.0]
+        e: [0.00, 0.90]
+        i: [30, 120] 
+  star:
+    star_parameters:
+      priors:
+        mass: ['Gaussian', 1.21, 0.05]
+        radius: ['Gaussian', 1.91, 0.05]
+models:
+  radial_velocities:
+    planets:
+      - b
+parameters:
+  Tref: 2455000.00
+solver:
+  pyde:
+    ngen: 50000
+    npop_mult: 4
+  emcee:
+    npop_mult: 4
+    nsteps: 20000
+    nburn: 10000
+    thin: 100
+  nested_sampling:
+    nlive: 1000
+  recenter_bounds: True

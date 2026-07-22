@@ -1,0 +1,55 @@
+inputs:
+  RV_data:
+    file: HD5388_RV.dat
+    kind: RV
+    models:
+      - radial_velocities
+  orbitize_file:
+    external: True
+    #file: simulated_rvs.dat
+    file: no_data.csv
+    kind: orbitize
+    models:
+      - orbitize
+common:
+  planets:
+    b:
+      orbit: keplerian
+      use_mass: True
+      use_inclination: True
+      boundaries:
+        P: [100.0, 10000.0]
+        M_Me: [100, 3000.0]
+        e: [0.00, 0.90]
+        i: [0., 90.] #prograde orbit
+  star:
+    star_parameters:
+      priors:
+        mass: ['Gaussian', 1.21, 0.05]
+        radius: ['Gaussian', 1.91, 0.05]
+        parallax: ['Gaussian', 30.56, 0.09]
+models:
+  radial_velocities:
+    planets:
+      - b
+  orbitize:
+    model: orbitize
+    iad_filepath: HIP2_HIP004311.d
+    gost_filepath: GOST_HIP004311.csv
+    hipparcos_ID: 4311
+    planets:
+      - b
+parameters:
+  Tref: 2453600.00
+solver:
+  pyde:
+    ngen: 50000
+    npop_mult: 4
+  emcee:
+    npop_mult: 4
+    nsteps: 20000
+    nburn: 10000
+    thin: 100
+  nested_sampling:
+    nlive: 1000
+  recenter_bounds: True
